@@ -1,8 +1,8 @@
 <?php
 // Displays the directory of this file
-echo "Desde Public/index: " . __DIR__;
-echo "<br />" ;
-echo "The full path of this file is: " . __FILE__;
+//echo "Desde Public/index: " . __DIR__;
+//echo "<br />" ;
+//echo "The full path of this file is: " . __FILE__;
 ?>
 <section id="quienessomos" class="container-fluid homes">
         <div class="container">
