@@ -11,7 +11,7 @@
             </div>
             <div class="headerTitulo">
                 <h1>SOCIEDAD COMERCIAL DEL PLATA</h1>
-                <H2>Somos el vehículo de inversión<br />de la Argentina del futuro</H2>
+                <H2>Git Heroku Somos el vehículo de inversión<br />de la Argentina del futuro</H2>
             </div>
         </div>    
     </section>

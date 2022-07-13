@@ -20,8 +20,8 @@ class Router {
         $auth = $_SESSION['login'] ?? null;
         
         $rutasProtegidas = ['/notas/admin', '/notas/crear', '/notas/actualizar', '/notas/eliminar', '/empresas/admin', '/empresas/crear', '/empresas/actualizar', '/empresas/eliminar'  ];
-        //$urlActual = $_SERVER['PATH_INFO'] ?? '/';
-        $urlActual = $_SERVER['REQUEST_URI'] === '' ? '/' : $_SERVER['REQUEST_URI'];
+        $urlActual = $_SERVER['PATH_INFO'] ?? '/';
+        //$urlActual = $_SERVER['REQUEST_URI'] === '' ? '/' : $_SERVER['REQUEST_URI'];
         $metodo = $_SERVER['REQUEST_METHOD'];
         
         if($metodo === 'GET') {

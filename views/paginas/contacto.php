@@ -1,10 +1,4 @@
 <?php
-// Displays the directory of this file
-echo "Desde Public/index: " . __DIR__;
-echo "<br />" ;
-echo "The full path of this file is: " . __FILE__;
-?>
-<?php
     $seccion = "headerLight";
 ?>
 <div class="container contacto">
