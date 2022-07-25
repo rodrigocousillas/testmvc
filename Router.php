@@ -19,17 +19,36 @@ class Router {
         session_start();
         $auth = $_SESSION['login'] ?? null;
         
+        
         $rutasProtegidas = ['/notas/admin', '/notas/crear', '/notas/actualizar', '/notas/eliminar', '/empresas/admin', '/empresas/crear', '/empresas/actualizar', '/empresas/eliminar'  ];
-        $urlActual = $_SERVER['PATH_INFO'] ?? '/';
-        //$urlActual = $_SERVER['REQUEST_URI'] === '' ? '/' : $_SERVER['REQUEST_URI'];
+
+        //$urlActual = $_SERVER['PATH_INFO'] ?? '/';
+        $urlActual = $_SERVER['REQUEST_URI'] === '' ? '/' : $_SERVER['REQUEST_URI'];
         $metodo = $_SERVER['REQUEST_METHOD'];
         
+        $splitURL = explode('?', $urlActual);
+
+        var_dump($urlActual);
+
         if($metodo === 'GET') {
-            $fn = $this->rutasGET[$urlActual] ?? null;
+            $fn = $this->rutasGET[$splitURL[0]] ?? null;
         } else {
-            $fn = $this->rutasPOST[$urlActual] ?? null;
+            $fn = $this->rutasPOST[$splitURL[0]] ?? null;
         }
 
+        /*        
+        $urlActual = ($_SERVER['REQUEST_URI'] === '') ? '/' :  $_SERVER['REQUEST_URI'] ;
+        $metodo = $_SERVER['REQUEST_METHOD'];
+    
+        //dividimos la URL actual cada vez que exista un '?' eso indica que se están pasando variables por la url
+        $splitURL = explode('?', $urlActual);
+        
+        if ($metodo === 'GET') {
+            $fn = $this->getRoutes[$splitURL[0]] ?? null; //$splitURL[0] contiene la URL sin variables 
+        } else {
+        $fn = $this->postRoutes[$splitURL[0]] ?? null;
+        }
+        */
         if(in_array($urlActual, $rutasProtegidas) && !$auth) {
             header('Location: /');
         }

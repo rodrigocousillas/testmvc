@@ -28,7 +28,7 @@ class LoginController {
             }
         }
 
-        $router->render('auth/login', [
+        $router->renderAdmin('auth/login', [
             'errores' => $errores
         ]);
 
